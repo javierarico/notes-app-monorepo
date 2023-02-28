@@ -1,0 +1,33 @@
+{
+  "name": "part13-notes-app-monorepo-multipaquete",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "workspaces": [
+    "api",
+    "app"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build --workspace=app",
+    "start": "npm run start --workspace=api",
+    "dev:api": "npm run build && npm run dev --workspace=api",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "eslintConfig": {
+    "env": {
+      "cypress/globals": true,
+      "jest": true
+    },
+    "plugins": [
+      "cypress"
+    ]
+  },
+  "devDependencies": {
+    "eslint-plugin-cypress": "^2.11.2",
+    "eslint": "^8.33.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
